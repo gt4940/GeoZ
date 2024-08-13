@@ -100,6 +100,18 @@ def convex_hull_plot(latlong, y_pred, grid_resolution=100, colormap='Set3'):
         
         # Get a reference to the current Axes object and add the convex hull as a PolygonPatch
         patch = descartes.PolygonPatch(convex_hull, fc=colors[cluster], alpha=0.5)
+"""
+File "C:\Users\HKT\miniconda3\envs\GeoZ\Lib\site-packages\geoz.py", line 102, in convex_hull_plot
+patch = descartes.PolygonPatch(convex_hull, fc=colors[cluster], alpha=0.5)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\HKT\miniconda3\envs\GeoZ\Lib\site-packages\descartes\patch.py", line 87, in PolygonPatch
+return PathPatch(PolygonPath(polygon), **kwargs)
+                 ^^^^^^^^^^^^^^^^^^^^
+File "C:\Users\HKT\miniconda3\envs\GeoZ\Lib\site-packages\descartes\patch.py", line 63, in PolygonPath
+concatenate([asarray(t.exterior)[:, :2]] +
+             ~~~~~~~~~~~~~~~~~~~^^^^^^^
+IndexError: too many indices for array: array is 0-dimensional, but 2 were indexed
+"""
         ax.add_patch(patch)
 
     # Plot the data points on top of the convex hull
