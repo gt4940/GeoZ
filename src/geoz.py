@@ -194,7 +194,7 @@ def sklearn_plot(latlong, y_pred, C=100, gamma=30.0, grid_resolution=100, colorm
     
     
     fig, ax = plt.subplots()
-    clf = SVC(C=C, gamma=gamma, random_state=random_seed)
+    clf = SVC(C=C, gamma=gamma, random_state=random_seed) # clf=classifier
     
     # Creating the Bazel
     X=latlong[['LONGITUDE','LATITUDE']]
